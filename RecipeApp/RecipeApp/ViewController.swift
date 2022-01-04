@@ -13,41 +13,39 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var masterList: [MasterList] = []
-    var categories: [Category] = []
+    var categories = [Category]()
+    var masterList = [MasterList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        fetchCategoryData()
-    }
-    
-    ///  Fetches categories and calls fetchMealData() upon completion
-    ///
-    ///  No parameters
-    ///  No return value
-    func fetchCategoryData() {
-        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/categories.php")!
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {
-                return
-            }
-            do {
-                let obj = try JSONDecoder().decode(RecipeCategory.self, from: data)
-                for cat in obj.categories! {
+        async {
+            let obj = await fetchCategories()
+            if let catArray = obj.categories {
+                for cat in catArray {
                     if cat.strCategory != "" {
                         self.categories.append(cat)
                     }
                 }
-                self.fetchMealData()
             }
-            catch {
-                let error = error
-                print("error")
+            if self.categories.count > 0 {
+                fetchMealData()
             }
-        }.resume()
+        }
     }
+    
+    
+    private func fetchCategories() async -> RecipeCategory {
+        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/categories.php")!
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let obj = try JSONDecoder().decode(RecipeCategory.self, from: data)
+            return obj
+        } catch {
+            return RecipeCategory(categories: [])
+        }
+    }
+    
     
     ///  Fetches meals by category. Any meal that is missing data is not added to tableView data. Categories and meals are sorted alphabetically. Reloads tableView data upon completion on main thread.
     ///

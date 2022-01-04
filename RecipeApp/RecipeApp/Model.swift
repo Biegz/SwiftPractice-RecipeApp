@@ -30,27 +30,50 @@ class Meal: Codable {
     }
 }
 
-class Category: Codable {
+
+
+
+
+//class Category: Codable {
+//    let idCategory: String?
+//    let strCategory: String?
+//    let strCategoryThumb: String?
+//    let strCategoryDescription: String?
+//
+//    init(idCategory: String, strCategory: String, strCategoryThumb: String, strCategoryDescription: String){
+//        self.idCategory = idCategory
+//        self.strCategory = strCategory
+//        self.strCategoryThumb = strCategoryThumb
+//        self.strCategoryDescription = strCategoryDescription
+//    }
+//}
+
+struct Category: Codable {
     let idCategory: String?
     let strCategory: String?
     let strCategoryThumb: String?
     let strCategoryDescription: String?
-    
-    init(idCategory: String, strCategory: String, strCategoryThumb: String, strCategoryDescription: String){
-        self.idCategory = idCategory
-        self.strCategory = strCategory
-        self.strCategoryThumb = strCategoryThumb
-        self.strCategoryDescription = strCategoryDescription
-    }
 }
 
-class RecipeCategory: Codable {
+
+
+
+//class RecipeCategory: Codable {
+//    let categories: [Category]?
+//
+//    init(categories: [Category]){
+//        self.categories = categories
+//    }
+//}
+
+struct RecipeCategory: Codable {
     let categories: [Category]?
-    
-    init(categories: [Category]){
-        self.categories = categories
-    }
 }
+
+
+
+
+
 
 class RecipeMeal: Codable {
     let meals: [Meal]?
@@ -59,11 +82,6 @@ class RecipeMeal: Codable {
         self.meals = meals
     }
 }
-
-
-
-
-
 
 
 //  This class helps with distiguishing sections within the table view delgate and data functions.

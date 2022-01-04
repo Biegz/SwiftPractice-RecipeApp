@@ -94,8 +94,6 @@ class MealDetailViewController: UIViewController {
 }
 
 extension MealDetailViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    //  NUMBER OF
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.combinedValues.count
     }
@@ -104,17 +102,9 @@ extension MealDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return self.combinedValues[section].list.count
     }
     
-    
-    
-    
-    
-    
-    //  CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
-    
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OtherCell", for: indexPath) as! OtherCell
@@ -123,11 +113,6 @@ extension MealDetailViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    
-    
-    
-    //  HEADER
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         20
     }
@@ -135,7 +120,4 @@ extension MealDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return combinedValues[section].type
     }
-    
-
-    
 }
