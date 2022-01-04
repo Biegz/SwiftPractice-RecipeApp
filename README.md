@@ -3,7 +3,7 @@ Simple recipe app that shows meals by category and detailed information of each 
 
 Tools used:
 - Async/Await
-- Structs (because of default init)
+- Structs (for default init)
 - URLSession
 - UITableView
 - Codable
