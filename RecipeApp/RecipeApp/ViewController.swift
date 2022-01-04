@@ -98,7 +98,6 @@ class ViewController: UIViewController {
 
 extension ViewController:UITableViewDelegate, UITableViewDataSource {
     
-    //  NUMBER OF
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.masterList.count
     }
@@ -107,12 +106,6 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return self.masterList[section].meals.count
     }
     
-    
-    
-    
-    
-    
-    //  CELL
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
@@ -136,11 +129,6 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
-    
-    
-    
-    //  HEADER
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         20
     }
@@ -148,9 +136,6 @@ extension ViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return masterList[section].cat
     }
-    
-
-    
 }
 
 
