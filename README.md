@@ -14,4 +14,4 @@ Tools used:
 
 Screenshots:
 
-<img src="https://github.com/kushaldelhiwala/SpeedySpot/blob/master/Documents/App%20Screenshots/speedy_login.png" width="300" height="630">
+<img src="https://github.com/Biegz/SwiftPractice-RecipeApp/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2013%20-%202022-01-05%20at%2013.46.11.png" width="300" height="630">
