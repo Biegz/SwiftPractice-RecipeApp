@@ -12,5 +12,5 @@ Tools used:
 - JSONDecoder()
 - Dictionary
 
-Screenshots:
+Screenshots:\n
 <img src="https://github.com/kushaldelhiwala/SpeedySpot/blob/master/Documents/App%20Screenshots/speedy_login.png" width="300" height="630">
